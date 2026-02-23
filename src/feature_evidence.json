@@ -1,0 +1,91 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-add-location-selection-functionality-to-the-user-registration-and-profile-editing-flows-in-the-frontend",
+      "featureTitle": "Add location selection functionality to the user registration and profile editing flows in the frontend",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/EditProfileForm.tsx",
+        "frontend/src/components/RegisterForm.tsx",
+        "frontend/src/components/UserProfile.tsx",
+        "frontend/src/pages/EditProfile.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "authorization@4.0.0"
+      ],
+      "testIds": [
+        "REQ-7"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-a-moderation-interface-in-the-frontend-that-allows-moderators-to-review-posts-and-approve-or-remove-them",
+      "featureTitle": "Create a moderation interface in the frontend that allows moderators to review posts and approve or remove them",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/Layout.tsx",
+        "frontend/src/components/ModerationPostCard.tsx",
+        "frontend/src/components/ModerationQueue.tsx",
+        "frontend/src/hooks/useQueries.ts",
+        "frontend/src/pages/Moderation.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "authorization@4.0.0"
+      ],
+      "testIds": [
+        "REQ-10"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-filter-the-community-feed-to-only-display-posts-that-have-been-approved-by-moderators",
+      "featureTitle": "Filter the community feed to only display posts that have been approved by moderators",
+      "files": [
+        "frontend/src/components/CommunityFeed.tsx",
+        "frontend/src/components/PostCard.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "authorization@4.0.0"
+      ],
+      "testIds": [
+        "REQ-11"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-display-user-location-information-on-user-profile-pages",
+      "featureTitle": "Display user location information on user profile pages",
+      "files": [
+        "frontend/src/components/UserProfile.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "authorization@4.0.0"
+      ],
+      "testIds": [
+        "REQ-12"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

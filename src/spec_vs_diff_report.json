@@ -1,0 +1,45 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-23T16:33:16.448Z",
+  "summary": "The implementation successfully delivers all requested requirements. The backend properly extends the user profile model with location fields, adds post moderation status with authorization logic, and provides APIs for moderation. The frontend implements location selection in registration and profile editing, creates a comprehensive moderation interface with queue management, filters the community feed to show only approved posts, and displays user location on profile pages. All acceptance criteria appear to be met.",
+  "missing_requirements": [],
+  "hallucinated_features": [
+    {
+      "description": "URL parameter utility functions for admin token management in frontend/src/utils/urlParams.ts",
+      "reason": "The BuildRequest does not mention admin token handling via URL parameters or session storage. This appears to be implementation detail beyond the specified requirements.",
+      "evidence": [
+        "frontend/src/utils/urlParams.ts"
+      ]
+    },
+    {
+      "description": "Admin token initialization in actor setup via _initializeAccessControlWithSecret",
+      "reason": "The BuildRequest does not specify any requirements for secret-based admin initialization or caffeineAdminToken handling. REQ-9 only mentions 'designates certain users as moderators' without specifying URL-based secret token mechanisms.",
+      "evidence": [
+        "frontend/src/hooks/useActor.ts"
+      ]
+    }
+  ],
+  "confidence": 0.92,
+  "changed_files": [
+    "backend/main.mo",
+    "backend/migration.mo",
+    "frontend-file-summaries.txt",
+    "frontend/src/App.tsx",
+    "frontend/src/components/CommunityFeed.tsx",
+    "frontend/src/components/EditProfileForm.tsx",
+    "frontend/src/components/Layout.tsx",
+    "frontend/src/components/ModerationPostCard.tsx",
+    "frontend/src/components/ModerationQueue.tsx",
+    "frontend/src/components/PostCard.tsx",
+    "frontend/src/components/RegisterForm.tsx",
+    "frontend/src/components/UserProfile.tsx",
+    "frontend/src/hooks/useActor.ts",
+    "frontend/src/hooks/useQueries.ts",
+    "frontend/src/pages/CreatePost.tsx",
+    "frontend/src/pages/EditProfile.tsx",
+    "frontend/src/pages/Moderation.tsx",
+    "frontend/src/utils/urlParams.ts",
+    "project_state.json"
+  ]
+}

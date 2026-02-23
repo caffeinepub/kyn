@@ -1,0 +1,147 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 5,
+  "summary": "KYN (Know Your Neighbor) - A free speech social media app where users can upload and share information about their community and neighbors",
+  "architectural_notes": [
+    "Social media platform architecture with user-generated content",
+    "Free speech platform requiring content moderation considerations",
+    "Community-focused design with location/neighborhood context",
+    "Location-based content organization and filtering"
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "existing_features": [
+    {
+      "id": "feature-implement-user-authentication-system-using-internet-identity-that-allows-users-to-register-and-log-in-to-the-platform",
+      "title": "Implement user authentication system using Internet Identity that allows users to register and log in to the platform",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-post-creation-interface-that-allows-authenticated-users-to-upload-and-share-information-about-their-community-and-neighbors-with-text-content",
+      "title": "Create a post creation interface that allows authenticated users to upload and share information about their community and neighbors with text content",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-community-feed-interface-that-displays-all-user-submitted-posts-in-chronological-order-with-most-recent-posts-first",
+      "title": "Build a community feed interface that displays all user-submitted posts in chronological order with most recent posts first",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-user-profile-pages-that-display-individual-user-information-and-their-posted-content",
+      "title": "Create user profile pages that display individual user information and their posted content",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-establish-a-cohesive-visual-design-theme-for-the-kyn-platform-with-a-neighborhood-focused-aesthetic-using-warm-community-oriented-colors-and-clean-typography-that-reflects-trust-and-openness",
+      "title": "Establish a cohesive visual design theme for the KYN platform with a neighborhood-focused aesthetic using warm, community-oriented colors and clean typography that reflects trust and openness",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-location-selection-functionality-to-the-user-registration-and-profile-editing-flows-in-the-frontend",
+      "title": "Add location selection functionality to the user registration and profile editing flows in the frontend",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-moderation-interface-in-the-frontend-that-allows-moderators-to-review-posts-and-approve-or-remove-them",
+      "title": "Create a moderation interface in the frontend that allows moderators to review posts and approve or remove them",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-filter-the-community-feed-to-only-display-posts-that-have-been-approved-by-moderators",
+      "title": "Filter the community feed to only display posts that have been approved by moderators",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-display-user-location-information-on-user-profile-pages",
+      "title": "Display user location information on user profile pages",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "User registration and authentication system",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Post creation and upload functionality for community information",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Community and neighbor information feed/timeline",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Content moderation system for posts",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Location selection functionality for users",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Extend the user profile data model in the backend to include a location field that stores the user's selected location",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-9",
+      "summary": "Add a moderation status field to posts in the backend that tracks whether posts are pending review, approved, or removed",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-10",
+      "summary": "Implement backend authorization logic that designates certain users as moderators with permission to approve or remove posts",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "KYN",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

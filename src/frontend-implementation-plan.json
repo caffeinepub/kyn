@@ -1,0 +1,122 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Add user profiles, post moderation, and location selection",
+  "requirements": [
+    {
+      "id": "REQ-7",
+      "summary": "Add location selection functionality to user registration and profile editing flows",
+      "acceptanceCriteria": [
+        "Users can select a location during registration",
+        "Users can view their current location on their profile",
+        "Users can update their location from their profile page",
+        "Location selection UI is intuitive and accessible"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/RegisterForm.tsx",
+          "operation": "modify",
+          "description": "Add a location input field to the registration form. The field should allow users to enter their location as text (city, region, or area). Update the form state to include location and pass it when calling saveCallerUserProfile. Include validation to ensure the location field is not empty before submission."
+        },
+        {
+          "path": "frontend/src/components/EditProfileForm.tsx",
+          "operation": "create",
+          "description": "Create a new profile editing form component that allows users to update their username and location. Pre-populate the form with current profile data fetched from getCallerUserProfile. Include save functionality that calls saveCallerUserProfile with the updated profile data. Add proper validation, loading states, and toast notifications for success/error feedback."
+        },
+        {
+          "path": "frontend/src/pages/EditProfile.tsx",
+          "operation": "create",
+          "description": "Create a page component that renders the EditProfileForm component. Wrap it in the AuthGuard component to ensure only authenticated users can access it. Include a back navigation link to return to the profile page after editing."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add a new route for the profile editing page at path '/profile/edit' that renders the EditProfile page component. Place this route definition alongside existing routes in the router configuration."
+        },
+        {
+          "path": "frontend/src/components/UserProfile.tsx",
+          "operation": "modify",
+          "description": "Display the user's location information in the profile view. Add the location field below the username display, using consistent styling with the rest of the profile design. If the viewing user is the profile owner, add an 'Edit Profile' button that navigates to /profile/edit."
+        }
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "summary": "Create a moderation interface that allows moderators to review posts and approve or remove them",
+      "acceptanceCriteria": [
+        "Moderators see a moderation queue or interface accessible from navigation",
+        "Each post displays approve and remove action buttons for moderators",
+        "Moderation actions trigger backend updates and refresh the UI",
+        "Non-moderators do not see moderation controls"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/hooks/useQueries.ts",
+          "operation": "modify",
+          "description": "Add React Query hooks for moderation functionality: useIsCallerAdmin to check if the current user is an admin/moderator, useGetPostsByStatus to fetch posts filtered by moderation status (pendingReview, approved, rejected), useApprovePost mutation to approve a post, and useRejectPost mutation to reject/remove a post. Configure mutations to invalidate relevant query caches after successful moderation actions."
+        },
+        {
+          "path": "frontend/src/components/ModerationPostCard.tsx",
+          "operation": "create",
+          "description": "Create a specialized post card component for the moderation interface. Display post content, author information, timestamp, and current moderation status. Include 'Approve' and 'Reject' action buttons that call the respective mutation hooks. Show loading states during moderation actions and disable buttons while processing. Display the post status badge (pending/approved/rejected) with appropriate color coding."
+        },
+        {
+          "path": "frontend/src/components/ModerationQueue.tsx",
+          "operation": "create",
+          "description": "Create a moderation queue component that displays posts by status. Include tabs or filters to view posts by status (pending review, approved, rejected). Fetch posts using useGetPostsByStatus and render them using ModerationPostCard components. Include loading states, error handling, and empty state messaging for each status category."
+        },
+        {
+          "path": "frontend/src/pages/Moderation.tsx",
+          "operation": "create",
+          "description": "Create a moderation page that renders the ModerationQueue component. Wrap the entire page in an admin guard that checks useIsCallerAdmin and displays an access denied message for non-moderators. Include a page header explaining the moderation interface purpose."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add a new route for the moderation page at path '/moderation' that renders the Moderation page component. Place this route definition alongside existing routes in the router configuration."
+        },
+        {
+          "path": "frontend/src/components/Layout.tsx",
+          "operation": "modify",
+          "description": "Add conditional navigation link for 'Moderation' that only appears when useIsCallerAdmin returns true. Place this link in both desktop and mobile navigation menus. The link should navigate to /moderation when clicked."
+        }
+      ]
+    },
+    {
+      "id": "REQ-11",
+      "summary": "Filter the community feed to only display approved posts to regular users, while allowing moderators to optionally view all posts",
+      "acceptanceCriteria": [
+        "The community feed only shows approved posts to regular users",
+        "Removed posts do not appear in the feed",
+        "Moderators can optionally view all posts regardless of status"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/CommunityFeed.tsx",
+          "operation": "modify",
+          "description": "Update the component to check if the current user is an admin using useIsCallerAdmin. For regular users, the component already displays posts from getCommunityFeed which returns only approved posts per the backend interface. For moderators, add a toggle switch or filter option that allows them to view all posts or only approved posts. When viewing all posts as a moderator, display post status badges on each PostCard to indicate moderation state."
+        },
+        {
+          "path": "frontend/src/components/PostCard.tsx",
+          "operation": "modify",
+          "description": "Add an optional status prop to the PostCard component. When provided, display a status badge (pending/approved/rejected) with appropriate styling and color coding. Position the badge prominently (e.g., top-right corner of the card) so moderators can quickly identify post status when viewing the feed with all posts visible."
+        }
+      ]
+    },
+    {
+      "id": "REQ-12",
+      "summary": "Display user location information on user profile pages",
+      "acceptanceCriteria": [
+        "User profile pages display the user's selected location if available",
+        "Location information is styled consistently with the existing profile design"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/UserProfile.tsx",
+          "operation": "modify",
+          "description": "Display the location field from the UserProfile data structure. Show the location below the username with an icon (e.g., map pin or location marker) to visually indicate it's a location. If location is empty or not set, display a message like 'Location not specified'. Style the location text consistently with other profile metadata using existing design patterns from the component."
+        }
+      ]
+    }
+  ]
+}

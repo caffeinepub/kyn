@@ -1,0 +1,135 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-23T16:33:16.451Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 7,
+    "implemented": 4,
+    "items": [
+      {
+        "id": "REQ-10",
+        "summary": "Create a moderation interface in the frontend that allows moderators to review posts and approve or remove them",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/hooks/useQueries.ts",
+          "frontend/src/components/ModerationPostCard.tsx",
+          "frontend/src/components/ModerationQueue.tsx",
+          "frontend/src/pages/Moderation.tsx",
+          "frontend/src/App.tsx",
+          "frontend/src/components/Layout.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/hooks/useQueries.ts",
+          "frontend/src/components/ModerationPostCard.tsx",
+          "frontend/src/components/ModerationQueue.tsx",
+          "frontend/src/pages/Moderation.tsx",
+          "frontend/src/App.tsx",
+          "frontend/src/components/Layout.tsx"
+        ]
+      },
+      {
+        "id": "REQ-11",
+        "summary": "Filter the community feed to only display posts that have been approved by moderators",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/CommunityFeed.tsx",
+          "frontend/src/components/PostCard.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/CommunityFeed.tsx",
+          "frontend/src/components/PostCard.tsx"
+        ]
+      },
+      {
+        "id": "REQ-12",
+        "summary": "Display user location information on user profile pages",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/UserProfile.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/UserProfile.tsx"
+        ]
+      },
+      {
+        "id": "REQ-6",
+        "summary": "Extend the user profile data model in the backend to include a location field that stores the user's selected location",
+        "status": "unknown",
+        "plannedFiles": [],
+        "matchedFiles": []
+      },
+      {
+        "id": "REQ-7",
+        "summary": "Add location selection functionality to the user registration and profile editing flows in the frontend",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/RegisterForm.tsx",
+          "frontend/src/components/EditProfileForm.tsx",
+          "frontend/src/pages/EditProfile.tsx",
+          "frontend/src/App.tsx",
+          "frontend/src/components/UserProfile.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/RegisterForm.tsx",
+          "frontend/src/components/EditProfileForm.tsx",
+          "frontend/src/pages/EditProfile.tsx",
+          "frontend/src/App.tsx",
+          "frontend/src/components/UserProfile.tsx"
+        ]
+      },
+      {
+        "id": "REQ-8",
+        "summary": "Add a moderation status field to posts in the backend that tracks whether posts are pending review, approved, or removed",
+        "status": "unknown",
+        "plannedFiles": [],
+        "matchedFiles": []
+      },
+      {
+        "id": "REQ-9",
+        "summary": "Implement backend authorization logic that designates certain users as moderators with permission to approve or remove posts",
+        "status": "unknown",
+        "plannedFiles": [],
+        "matchedFiles": []
+      }
+    ]
+  },
+  "changedFiles": [
+    "backend/authorization/MixinAuthorization.mo",
+    "backend/authorization/access-control.mo",
+    "backend/main.mo",
+    "backend/migration.mo",
+    "build-request.json",
+    "build-template/README.md",
+    "caffeine.lock.json",
+    "feature_evidence.json",
+    "frontend-file-summaries.txt",
+    "frontend-implementation-plan.json",
+    "frontend/src/App.tsx",
+    "frontend/src/backend.d.ts",
+    "frontend/src/backend.ts",
+    "frontend/src/components/CommunityFeed.tsx",
+    "frontend/src/components/EditProfileForm.tsx",
+    "frontend/src/components/Layout.tsx",
+    "frontend/src/components/ModerationPostCard.tsx",
+    "frontend/src/components/ModerationQueue.tsx",
+    "frontend/src/components/PostCard.tsx",
+    "frontend/src/components/RegisterForm.tsx",
+    "frontend/src/components/UserProfile.tsx",
+    "frontend/src/declarations/backend.did.d.ts",
+    "frontend/src/declarations/backend.did.js",
+    "frontend/src/hooks/useActor.ts",
+    "frontend/src/hooks/useQueries.ts",
+    "frontend/src/pages/CreatePost.tsx",
+    "frontend/src/pages/EditProfile.tsx",
+    "frontend/src/pages/Moderation.tsx",
+    "frontend/src/utils/urlParams.ts",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}

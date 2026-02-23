@@ -1,0 +1,151 @@
+{
+  "kind": "build_request",
+  "title": "Add user profiles, post moderation, and location selection",
+  "projectName": "KYN",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-6",
+      "text": "Extend the user profile data model in the backend to include a location field that stores the user's selected location",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "I also want users to be able to select a location"
+        ]
+      },
+      "acceptanceCriteria": [
+        "User profile records include a location field",
+        "Location data persists across canister upgrades",
+        "Users can update their location after initial registration"
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "text": "Add location selection functionality to the user registration and profile editing flows in the frontend",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "I also want users to be able to select a location"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Users can select a location during registration",
+        "Users can view their current location on their profile",
+        "Users can update their location from their profile page",
+        "Location selection UI is intuitive and accessible"
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "text": "Add a moderation status field to posts in the backend that tracks whether posts are pending review, approved, or removed",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "I want to add user profiles and a way to moderate posts"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Posts have a moderation status that defaults to pending or approved",
+        "Moderation status persists across canister upgrades",
+        "Backend API supports querying posts by moderation status"
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "text": "Implement backend authorization logic that designates certain users as moderators with permission to approve or remove posts",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "I want to add user profiles and a way to moderate posts"
+        ]
+      },
+      "acceptanceCriteria": [
+        "System identifies and stores moderator principals",
+        "Only moderators can change post moderation status",
+        "Non-moderators attempting moderation actions receive authorization errors"
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "text": "Create a moderation interface in the frontend that allows moderators to review posts and approve or remove them",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "I want to add user profiles and a way to moderate posts"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Moderators see a moderation queue or interface accessible from navigation",
+        "Each post displays approve and remove action buttons for moderators",
+        "Moderation actions trigger backend updates and refresh the UI",
+        "Non-moderators do not see moderation controls"
+      ]
+    },
+    {
+      "id": "REQ-11",
+      "text": "Filter the community feed to only display posts that have been approved by moderators",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "I want to add user profiles and a way to moderate posts"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The community feed only shows approved posts to regular users",
+        "Removed posts do not appear in the feed",
+        "Moderators can optionally view all posts regardless of status"
+      ]
+    },
+    {
+      "id": "REQ-12",
+      "text": "Display user location information on user profile pages",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "I also want users to be able to select a location"
+        ]
+      },
+      "acceptanceCriteria": [
+        "User profile pages display the user's selected location if available",
+        "Location information is styled consistently with the existing profile design"
+      ]
+    }
+  ],
+  "constraints": [
+    "Maintain single-actor backend architecture in main.mo",
+    "Do not modify read-only frontend paths: useInternetIdentity.ts, useInternetIdentity.tsx, useActor.ts, main.tsx, components/ui",
+    "Preserve existing user authentication via Internet Identity",
+    "Maintain chronological post ordering in the community feed"
+  ],
+  "nonGoals": [
+    "Geographic mapping or GPS integration",
+    "Automated content moderation using AI",
+    "Role-based access control beyond basic moderator designation",
+    "Location-based filtering or searching of posts"
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}

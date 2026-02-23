@@ -1,0 +1,22 @@
+{
+  "frontend/src/App.tsx": "Main application component with TanStack Router setup including routes for feed, profile, profile editing, post creation, and moderation, wrapped in ThemeProvider with Toaster for notifications.",
+  "frontend/src/hooks/useQueries.ts": "Custom React Query hooks for all backend operations including community feed, user profiles, post creation, moderation actions (approve/reject posts), admin checks, and posts filtered by status with proper cache invalidation.",
+  "frontend/src/components/Layout.tsx": "Main layout component with responsive header featuring navigation including conditional moderation link for admins, authentication controls, and footer with social links and caffeine.ai attribution.",
+  "frontend/src/components/HeroSection.tsx": "Hero banner component displaying the generated hero image with welcoming community messaging and call-to-action buttons for authenticated and unauthenticated users.",
+  "frontend/src/components/PostCard.tsx": "Reusable post card component that displays individual posts with author information, timestamp, content, and optional status badge using PostStatus enum for moderator view.",
+  "frontend/src/components/CommunityFeed.tsx": "Community feed component that displays approved posts with optional moderator toggle to show post status badges when viewing as an admin.",
+  "frontend/src/components/CreatePostForm.tsx": "Post creation form with textarea input, character count, validation, and submission handling with loading states and toast notifications.",
+  "frontend/src/components/RegisterForm.tsx": "User registration form that collects username and location during initial profile setup with validation and submission handling using saveCallerUserProfile.",
+  "frontend/src/components/AuthGuard.tsx": "Authentication guard component that protects routes by checking for Internet Identity authentication and displays login prompt for unauthenticated users.",
+  "frontend/src/components/UserProfile.tsx": "User profile component displaying user information including location with map pin icon, post count, and all user posts with an edit profile button for profile owners.",
+  "frontend/src/pages/Feed.tsx": "Feed page component that combines HeroSection and CommunityFeed to create the main landing page of the application.",
+  "frontend/src/pages/CreatePost.tsx": "Create post page that checks user registration status and displays either the post creation form or registration form with location field, wrapped in AuthGuard.",
+  "frontend/src/pages/Profile.tsx": "Profile page component that extracts userId from route parameters and renders the UserProfile component.",
+  "frontend/src/index.css": "Global styles with warm, community-oriented OKLCH color system featuring earthy orange-brown primary colors for both light and dark modes with proper contrast ratios.",
+  "frontend/tailwind.config.js": "Tailwind configuration extended with Inter font family, custom border radius, and design tokens mapped to OKLCH color variables for consistent theming.",
+  "frontend/src/components/EditProfileForm.tsx": "Profile editing form component that allows users to update their username and location, pre-populated with current profile data and includes save/cancel actions with navigation.",
+  "frontend/src/components/ModerationPostCard.tsx": "Specialized post card for moderation interface with approve and reject action buttons, status badges using PostStatus enum, and loading states during moderation actions.",
+  "frontend/src/components/ModerationQueue.tsx": "Moderation queue component with tabs to view posts by status (pending, approved, rejected) using PostStatus enum values from backend interface with ModerationPostCard components and proper loading/empty states.",
+  "frontend/src/pages/EditProfile.tsx": "Edit profile page that renders the EditProfileForm component wrapped in AuthGuard to ensure only authenticated users can access it.",
+  "frontend/src/pages/Moderation.tsx": "Moderation page that checks admin permissions and displays ModerationQueue component or access denied message for non-moderators, wrapped in AuthGuard."
+}
